@@ -1,0 +1,46 @@
+{
+  "name": "laberinto",
+  "version": "1.0.0",
+  "description": "laberinto",
+  "main": "index.jsx",
+  "type": "module",
+  "scripts": {
+    "build": "webpack --mode development",
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jack200133/Labrinto-React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jack200133/Labrinto-React/issues"
+  },
+  "homepage": "https://github.com/Jack200133/Labrinto-React#readme",
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-transform-regenerator": "^7.17.9",
+    "@babel/preset-react": "^7.16.7",
+    "@emotion/babel-plugin": "^11.9.2",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@emotion/css": "^11.9.0",
+    "@emotion/react": "^11.9.0",
+    "@linaria/shaker": "^3.0.0-beta.15",
+    "@linaria/webpack-loader": "^3.0.0-beta.16",
+    "babel-loader": "^8.2.4",
+    "electron": "^18.1.0",
+    "emotion": "^11.0.0",
+    "file-loader": "^6.2.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router": "^6.3.0",
+    "react-router-dom": "^6.3.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  },
+  "devDependencies": {
+    "img-loader": "^4.0.0",
+    "webpack-dev-server": "^4.8.1"
+  }
+}

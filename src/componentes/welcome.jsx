@@ -52,7 +52,7 @@ const Welcome = () => {
 
 
             </div>
-            <button className={button} onClick={() => { const nav = 'login'; navi(nav) }}>
+            <button className={button} onClick={() => { const nav = '/login'; navi(nav) }}>
                 Ingresar al JUEGO
             </button>
 

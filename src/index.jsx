@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 root.render(
 
-    <Router>
+    <Router basename={"/20593/LabHelltaker/"}>
         <Routes>
             <Route path="/" element={<Welcome />} />
             <Route path="/login" element={<Login />} />

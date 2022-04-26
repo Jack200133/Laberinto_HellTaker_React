@@ -52,6 +52,7 @@ const queen = css`
 `
 
 const Maze = () => {
+    const navi = useNavigate()
     const { w } = useParams()
     const { h } = useParams()
     const [mapita, setMapita] = React.useState(null)
@@ -143,11 +144,15 @@ const Maze = () => {
         fetchLAB()
     }, [])
     useEffect(() => {
+
         if (win) {
-            let navi = useNavigate()
+
             navi('/end')
+
         }
+
     }, [win])
+
     useEffect(() => {
         console.log(mapita)
         if (mapita === null) {

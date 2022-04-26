@@ -52,7 +52,7 @@ const End = () => {
 
 
             </div>
-            <button className={button} onClick={() => { const nav = 'login'; navi(nav) }}>
+            <button className={button} onClick={() => { const nav = '/login'; navi(nav) }}>
                 Fin del Juego
             </button>
 

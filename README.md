@@ -2,6 +2,9 @@
 Laberinto que extrae un labrinto al azar de https://maze.juanelcaballo.club/?type=json&w=4&h=4
 
 ## Para correrlo
+Primero 
+`$npm i`
+para instalar dependencias
 `$ npm run build`
 Para builideralo y luego
 `$ npm start`

@@ -1,14 +1,14 @@
+/* eslint-disable import/prefer-default-export */
 import React from 'react'
 import { css } from '@emotion/css'
-import man from '../assets/wwp.png'
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom'
+import man from '../../assets/wwp.png'
 
 const TitleC = css`
     height: 100px;
     display: flex;
 
-`;
+`
 
 const mainC = css`
     display: flex;
@@ -26,8 +26,7 @@ const Title = css`
     color: white;
     font-size: 36px;
     font-weight: bold;
-`;
-
+`
 const button = css`
     width: 200px;
     height: 30px;
@@ -36,30 +35,24 @@ const button = css`
     border-color: #white;
 `
 
-
-
 const End = () => {
+  const navi = useNavigate()
 
-    let navi = useNavigate()
-
-    return (
-        <div className={mainC}>
-            <div className={TitleC}>
-                <div className={Title}>
-                    HELLTAKER MAZE
-                </div>
-
-
-
-            </div>
-            <button className={button} onClick={() => { const nav = '/login'; navi(nav) }}>
-                Fin del Juego
-            </button>
-
+  return (
+    <div className={mainC}>
+      <div className={TitleC}>
+        <div className={Title}>
+          HELLTAKER MAZE
         </div>
 
+      </div>
+      <button type="button" className={button} onClick={() => { navi('/login') }}>
+        Fin del Juego
+      </button>
 
-    )
+    </div>
+
+  )
 }
 
-export { End };
+export default End

@@ -1,28 +1,29 @@
 import React, { useState } from 'react'
 import { css } from '@emotion/css'
+import Proptypes from 'prop-types'
 
+const Floor = ({ mage, children }) => {
+  const [img, setImg] = useState(null)
 
+  const piso = css`
+      background-image: url(${img});
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 25px;
+      height: 25px;
+  `
+  if (img === null) {
+    setImg(mage)
+  }
+  return (
 
-const Floor = (props) => {
-    const [img, setImg] = useState(null)
-
-    const piso = css`
-        background-image: url(${img});
-        background-size: contain;
-        background-repeat: no-repeat;
-        width: 25px;
-        height: 25px;
-    `
-
-    if (img === null) {
-        setImg(props.mage)
-    }
-
-    return (
-
-        <div className={piso}>{props.children}</div>
-    )
-
+    <div className={piso}>{children}</div>
+  )
 }
 
-export { Floor };
+Floor.propTypes = {
+  mage: Proptypes.string.isRequired,
+  children: Proptypes.node.isRequired,
+}
+
+export default Floor

@@ -1,10 +1,10 @@
 export default {
   target: 'web',
-  mode:'development',
+  mode: 'development',
   devtool: 'source-map',
   entry: './src/index.jsx',
   output: {
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   devServer: {
     static: {
@@ -14,17 +14,17 @@ export default {
     compress: true,
     port: 9000,
   },
-  module:{
-    rules:[
-    {
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      use: [{ loader: 'babel-loader' }]
-    },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [{ loader: 'babel-loader' }],
+      },
       {
         test: /\.(png|jpg|gif|svg|mp3)$/,
-        use: [{loader:'file-loader'}],
-      }
-    ]
-  }
+        use: [{ loader: 'file-loader' }],
+      },
+    ],
+  },
 }

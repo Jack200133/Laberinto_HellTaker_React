@@ -1,13 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { css } from '@emotion/css'
-import man from '../assets/man.png'
-import aud from '../assets/vitality.mp3'
-import { useNavigate } from 'react-router-dom';
-
+import man from '../../assets/man.png'
+import aud from '../../assets/vitality.mp3'
 
 const audio = new Audio(aud)
-
-
 
 const TitleC = css`
     background-color: #700C29;
@@ -16,7 +13,7 @@ const TitleC = css`
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-`;
+`
 
 const mainC = css`
     display: flex;
@@ -29,7 +26,7 @@ const Title = css`
     color: white;
     font-size: 36px;
     font-weight: bold;
-`;
+`
 
 const containerlabel = css`
     display: flex;
@@ -52,49 +49,50 @@ const button = css`
     border-color: #E7C36B;
 `
 
-
-
 const Login = () => {
+  const [sizeW, setSizeW] = React.useState(0)
+  const [sizeH, setSizeH] = React.useState(0)
+  const navi = useNavigate()
 
-    const [sizeW, setSizeW] = React.useState(0)
-    const [sizeH, setSizeH] = React.useState(0)
-    let navi = useNavigate()
+  React.useEffect(() => {
+    audio.load()
+    audio.play()
+    audio.loop = true
+  }, [])
 
-    React.useEffect(() => {
-        audio.load()
-        audio.play()
-        audio.loop = true
-    }, [])
-
-    return (
-        <div className={mainC}>
-            <div className={TitleC}>
-                <div className={Title}>
-                    HELLTAKER MAZE
-                </div>
-                <div className={containerlabel}>
-                    <input
-                        placeholder='Ingrese el Width' type="text"
-                        onChange={(e) => setSizeW(e.target.value)}
-                        value={sizeW}
-                    />
-                    <input
-                        placeholder='Ingrese el Height' type="text"
-                        onChange={(e) => setSizeH(e.target.value)}
-                        value={sizeH}
-                    />
-                </div>
-                <button className={button} onClick={() => { const nav = '/maze/' + sizeH + '/' + sizeW; navi(nav) }}>
-                    Ingresar al Laberinto
-                </button>
-
-
-            </div>
-            <div className={prb}></div>
+  return (
+    <div className={mainC}>
+      <div className={TitleC}>
+        <div className={Title}>
+          HELLTAKER MAZE
         </div>
+        <div className={containerlabel}>
+          <input
+            placeholder="Ingrese el Width"
+            type="text"
+            onChange={(e) => setSizeW(e.target.value)}
+            value={sizeW}
+          />
+          <input
+            placeholder="Ingrese el Height"
+            type="text"
+            onChange={(e) => setSizeH(e.target.value)}
+            value={sizeH}
+          />
+        </div>
+        <button
+          className={button}
+          type="button"
+          onClick={() => { navi(`/maze/${sizeH}/${sizeW}`) }}
+        >
+          Ingresar al Laberinto
+        </button>
 
+      </div>
+      <div className={prb} />
+    </div>
 
-    )
+  )
 }
 
-export default Login;
+export default Login
